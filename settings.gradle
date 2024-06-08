@@ -8,7 +8,10 @@ Asi tendremos una build que se podra desplegar en cualquier entorno tanto de fro
 
 rootProject.name = "java-ddd-example"
 
+//va a haber n subproyectos, shared, analytics, backoffice, mooc y donde esta
+// esto es una customizacion para evitar que todo este en la raíz
 include ":shared"
+// el projectDir le indica a gradle donde estara el gradle por projecto con sus propias dependencias
 project(":shared").projectDir = new File("src/shared")
 
 include ":analytics"

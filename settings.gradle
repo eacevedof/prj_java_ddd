@@ -1,13 +1,14 @@
-rootProject.name = 'java-ddd-example'
 
-include ':shared'
-project(':shared').projectDir = new File('src/shared')
+rootProject.name = "java-ddd-example"
 
-include ':analytics'
-project(':analytics').projectDir = new File('src/analytics')
+include ":shared"
+project(":shared").projectDir = new File("src/shared")
 
-include ':backoffice'
-project(':backoffice').projectDir = new File('src/backoffice')
+include ":analytics"
+project(":analytics").projectDir = new File("src/analytics")
 
-include ':mooc'
-project(':mooc').projectDir = new File('src/mooc')
+include ":backoffice"
+project(":backoffice").projectDir = new File("src/backoffice")
+
+include ":mooc"
+project(":mooc").projectDir = new File("src/mooc")

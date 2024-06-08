@@ -1,3 +1,10 @@
+//settings.gradle
+/*
+El proyecto padre es app.
+El objetivo es tener un .jar con n argumentos para que levante segun estos un modulo u otro.
+Asi tendremos una build que se podra desplegar en cualquier entorno tanto de front como back.
+
+*/
 
 rootProject.name = "java-ddd-example"
 

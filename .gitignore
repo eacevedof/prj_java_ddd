@@ -1,27 +1,12 @@
-### IntelliJ IDEA ###
+
 .idea
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# Gradle
+.gradle
+build/
 
 ### VS Code ###
 .vscode/
@@ -30,7 +15,12 @@ bin/
 .DS_Store
 logs
 .fake
-target/
-docker/balance_be/*.jar
-src/main/resources/application.properties
-.mvn
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+/var/log/*
+!/var/log/.gitkeep
+
+.env.local
+.env.*.local

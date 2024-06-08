@@ -107,6 +107,7 @@ allprojects {
 }
 
 // All subprojects (located in src/*)
+//@eaf customiza la jerarquia de carpetas evitando la estructura comun de java
 subprojects {
     group = "tv.codely.${rootProject.name}"
 
@@ -134,6 +135,7 @@ subprojects {
         }
     }
 
+    //@eaf no se va a generar un .jar de springboot sino un .jar normal para poder requerir estos jars en el jar final
     bootJar {
         enabled = false
     }
@@ -157,7 +159,7 @@ sourceSets {
 }
 
 bootJar {
-    archiveBaseName.set('java-ddd-example')
+    archiveBaseName.set('prj-java-ddd')
     archiveVersion.set('0.0.1')
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

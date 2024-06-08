@@ -1,3 +1,4 @@
+// /build.gradle
 // Main project (located in apps/)
 buildscript {
     repositories {
@@ -28,8 +29,8 @@ spotless {
 
 // Common for all projects
 allprojects {
-    apply plugin: 'java'
-    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java' //para poder ejecutar java
+    apply plugin: 'io.spring.dependency-management' //
     apply plugin: 'org.springframework.boot'
 
     java {
@@ -90,6 +91,7 @@ allprojects {
         }
     }
 
+    //esto permite lanzar el comando: /gradlew :view_paths
     task view_paths {
         doLast { task ->
             println "$task.project.name"

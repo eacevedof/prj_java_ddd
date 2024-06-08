@@ -91,7 +91,9 @@ allprojects {
         }
     }
 
+    //@eaf
     //esto permite lanzar el comando: /gradlew :view_paths
+    //./gradlew :shared:view_paths
     task view_paths {
         doLast { task ->
             println "$task.project.name"

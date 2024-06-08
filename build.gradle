@@ -34,8 +34,8 @@ allprojects {
     apply plugin: 'org.springframework.boot'
 
     java {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
 
@@ -104,6 +104,17 @@ allprojects {
             println "   Resources: $sourceSets.test.resources.srcDirTrees"
         }
     }
+
+    task run(type: JavaExec) {
+        main = 'tv.codely.apps.Starter'
+        classpath = sourceSets.main.runtimeClasspath
+        args = ['mooc_backend', 'server']
+    }
+
+}
+
+bootRun {
+    mainClass = 'tv.codely.apps.Starter'
 }
 
 // All subprojects (located in src/*)

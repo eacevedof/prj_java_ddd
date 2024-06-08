@@ -12,6 +12,7 @@ import tv.codely.apps.backoffice.frontend.BackofficeFrontendApplication;
 import tv.codely.apps.mooc.backend.MoocBackendApplication;
 import tv.codely.shared.infrastructure.cli.ConsoleCommand;
 
+//@eaf puede levantar cualquier app
 public class Starter {
 
 	public static void main(String[] args) {

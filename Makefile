@@ -30,6 +30,7 @@ test:
 	@docker exec codely-java_ddd_example-test_server ./gradlew test --warning-mode all
 
 run:
+	clear;
 	@./gradlew :run
 
 ping-mysql:

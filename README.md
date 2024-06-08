@@ -10,3 +10,8 @@ https://pro.codely.com/library/ddd-en-java-48201/100825/path/step/63381717/
 - src:
   - bounded contexts
   - sub-proyectos
+
+- health-check:
+  - es donde llama un load balancer para saber si la app esta viva
+- status-check:
+  - comprueba dependencias

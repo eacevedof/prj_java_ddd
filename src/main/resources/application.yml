@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: JavaYog
+
+  # Disable web server (desktop app)
+  main:
+    web-application-type: none
+    lazy-initialization: false
+
+  # Database configuration will be dynamic per connection
+  datasource:
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+# Application configuration
+javayog:
+  # Directory for storing connections and settings
+  config-dir: ${user.home}/.javayog
+
+  # Query history settings
+  query-history:
+    max-entries: 1000
+    enabled: true
+
+  # Editor settings
+  editor:
+    font-size: 14
+    font-family: "Consolas, Monaco, monospace"
+    tab-size: 4
+    auto-complete: true
+
+  # Export settings
+  export:
+    default-format: SQL
+    temp-dir: ${java.io.tmpdir}/javayog-exports
+
+# Logging
+logging:
+  level:
+    root: INFO
+    com.javayog: DEBUG
+    org.springframework: WARN
+    com.zaxxer.hikari: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  file:
+    name: ${javayog.config-dir}/logs/javayog.log

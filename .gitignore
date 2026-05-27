@@ -1,26 +1,56 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
 
-.idea
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-
-# Gradle
-.gradle
-build/
-
-### VS Code ###
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
 .vscode/
+*.swp
+*.swo
+*~
 
-### Mac OS ###
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# NetBeans
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Java
+*.class
+*.log
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+
+# OS
 .DS_Store
-logs
-.fake
+Thumbs.db
+desktop.ini
 
-# Ignore Gradle GUI config
-gradle-app.setting
-
-/var/log/*
-!/var/log/.gitkeep
-
-.env.local
-.env.*.local
+# Application specific
+.javayog/
+logs/
+exports/

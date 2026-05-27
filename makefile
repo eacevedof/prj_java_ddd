@@ -10,7 +10,7 @@ help: ## Show this help message
 
 gitpush: ## git push
 	clear;
-	git add .; git commit -m "$(m)"; git push;
+	git add .; git commit -m "sql-yg: $(m)"; git push;
 
 all: build
 

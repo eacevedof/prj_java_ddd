@@ -1,0 +1,81 @@
+/* JavaYog Styles */
+
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f5f5f5;
+}
+
+/* Menu Bar */
+.menu-bar {
+    -fx-background-color: #ffffff;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #d0d0d0;
+}
+
+.button:pressed {
+    -fx-background-color: #c0c0c0;
+}
+
+/* TextArea */
+.text-area {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000000;
+}
+
+.text-area .content {
+    -fx-background-color: #ffffff;
+}
+
+/* ListView */
+.list-view {
+    -fx-background-color: #ffffff;
+}
+
+.list-cell:selected {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.list-cell:hover {
+    -fx-background-color: #e3f2fd;
+}
+
+/* TableView */
+.table-view {
+    -fx-background-color: #ffffff;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #e3f2fd;
+}
+
+.table-column {
+    -fx-font-weight: bold;
+}
+
+/* SplitPane */
+.split-pane-divider {
+    -fx-background-color: #cccccc;
+}
+
+/* Status Bar */
+.status-bar {
+    -fx-background-color: #f0f0f0;
+    -fx-padding: 5px;
+}

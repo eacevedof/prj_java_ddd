@@ -18,4 +18,9 @@ public enum ConnectionTypeEnum {
     public String getDisplayName() {
         return displayName;
     }
+
+    public static ConnectionTypeEnum fromString(String type) {
+        if (type == null) return DIRECT;
+        return ConnectionTypeEnum.valueOf(type.toUpperCase());
+    }
 }

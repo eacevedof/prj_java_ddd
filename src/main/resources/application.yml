@@ -7,14 +7,22 @@ spring:
     web-application-type: none
     lazy-initialization: false
 
-  # Database configuration will be dynamic per connection
+  # Application database (SQLite for storing connections and settings)
   datasource:
+    url: jdbc:sqlite:${javayog.config-dir}/javayog.db
+    driver-class-name: org.sqlite.JDBC
     hikari:
       maximum-pool-size: 10
       minimum-idle: 2
       connection-timeout: 30000
       idle-timeout: 600000
       max-lifetime: 1800000
+
+  # Initialize database schema
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:database/schema.sql
 
 # Application configuration
 javayog:

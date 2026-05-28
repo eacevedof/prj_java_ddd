@@ -1,44 +1,41 @@
-#!/bin/bash
-TODAY := $(shell date +'%Y%m%d')
-OS := $(shell uname)
+.PHONY: help clean compile test run package install
+
+# Maven wrapper script for MINGW/Git Bash
+SHELL := /bin/bash
+MVN := bash mvn.sh
 
 help: ## Show this help message
-	@echo "usage: make [target]"
-	@echo
-	@echo "targets:"
-	@egrep "^(.+)\:\ ##\ (.+)" ${MAKEFILE_LIST} | column -t -c 2 -s ":#"
+	@echo "JavaYog - Makefile commands"
+	@echo ""
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-15s\033[0m %s\n", $$1, $$2}'
 
-gitpush: ## git push
+gitpush: ## git push m=any message
 	clear;
-	git add .; git commit -m "sql-yg: $(m)"; git push;
+	git add .; git commit -m "jy:$(m)"; git push;
 
-all: build
 
-start:
-	@docker-compose -f docker-compose.ci.yml up -d
+clean: ## Clean build artifacts
+	$(MVN) clean
 
-build:
-	@./gradlew build --warning-mode all
+compile: ## Compile the project
+	$(MVN) compile
 
-lint:
-	@docker exec codely-java_ddd_example-test_server ./gradlew spotlessCheck
+test: ## Run tests
+	$(MVN) test
 
-run-tests:
-	@./gradlew test --warning-mode all
+run: ## Run the application
+	$(MVN) spring-boot:run
 
-test:
-	@docker exec codely-java_ddd_example-test_server ./gradlew test --warning-mode all
+package: ## Package application as JAR
+	$(MVN) package
 
-run:
-	clear;
-	@./gradlew :run
+install: ## Install dependencies
+	$(MVN) install
 
-ping-mysql:
-	@docker exec codely-java_ddd_example-mysql mysqladmin --user=root --password= --host "127.0.0.1" ping --silent
+build: ## Clean and package
+	$(MVN) clean package
 
-# Start the app
-start-mooc_backend:
-	@./gradlew bootRun --args='mooc_backend server'
+verify: ## Run tests and verify
+	$(MVN) verify
 
-start-backoffice_frontend:
-	@./gradlew bootRun --args='backoffice_frontend server'
+.DEFAULT_GOAL := help
